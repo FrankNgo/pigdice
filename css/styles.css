@@ -1,11 +1,42 @@
 h1{
   text-align: center;
   font-size: 60px;
-  margin-bottom: 20px;
+  margin-top: 300px;
+  margin-bottom: 40px;
+  border-bottom: 1px solid gray;
 
 
 }
 
 .center{
   text-align: center;
+}
+
+p{
+  font-size: 20px;
+
+}
+
+
+body{
+  background: #e1eec3;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #f05053, #e1eec3);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #f05053, #e1eec3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+}
+
+.well{
+  border: 1px solid black;
+
+}
+
+#rollAndHoldButton{
+  text-align: center;
+
+}
+
+#player2roll, #player2hold{
+
+  display: none;
 }
