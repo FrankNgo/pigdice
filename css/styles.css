@@ -12,6 +12,11 @@ h1{
   text-align: center;
 }
 
+#center2{
+  text-align: center;
+  display: none;
+}
+
 p{
   font-size: 20px;
 
@@ -22,8 +27,6 @@ body{
   background: #e1eec3;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #f05053, #e1eec3);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #f05053, #e1eec3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-
 }
 
 .well{
@@ -36,7 +39,31 @@ body{
 
 }
 
-#player2roll, #player2hold{
+#choosePlay{
+  padding-bottom: 50px;
+}
+#player2roll, #player2hold, #player1roll, #player1hold{
+
+  display: none;
+}
+
+.vsPlayer{
+  display: none;
+}
+
+.well {
+  min-height: 230px;
+}
+
+.gameText{
+  padding-bottom: 35px;
+}
+
+#computer{
+  display: none;
+}
+
+.vsAi{
 
   display: none;
 }

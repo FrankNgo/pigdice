@@ -11,7 +11,7 @@ function Player(){
 Player.prototype.rollDice = function() {
   if(this.roll === 1){
     this.tempScore = 0;
-    return alert("turn over. gg.");
+    return alert("Your turn is over pass the mouse over to the other player!");
   } else {
     this.tempScore = this.roll + this.tempScore;
   }
@@ -67,40 +67,70 @@ Player.prototype.player2Hold = function() {
 $(document).ready(function() {
   var player1 = new Player();
   var player2 = new Player();
-  $("button#player1roll").click(function(event) {
-    event.preventDefault();
-    player1.roll = ThrowDice();
-    $("#currentRoll1").text(player1.roll);
-    player1.rollDice();
-    $("#currentScore1").text(player1.tempScore);
-    player1.winCondition();
-    player1.playerTurn1();
+  $("button#playPlayer").click(function(event) {
+    $(".gameText").hide();
+    $(".choosePlay").hide();
+    $(".vsPlayer").show();
+    $("#center2").show();
+    $("#player1roll").show();
+    $("#player1hold").show();
   });
-  $("button#player1hold").click(function(event) {
-    event.preventDefault();
-    player1.hold();
-    $("#totalScore1").text(player1.totalScore);
-    player1.winCondition();
-    player1.player1Hold();
+    $("button#player1roll").click(function(event) {
+      event.preventDefault();
+      player1.roll = ThrowDice();
+      $("#currentRoll1").text(player1.roll);
+      player1.rollDice();
+      $("#currentScore1").text(player1.tempScore);
+      player1.winCondition();
+      player1.playerTurn1();
+    });
+    $("button#player1hold").click(function(event) {
+      event.preventDefault();
+      player1.hold();
+      $("#totalScore1").text(player1.totalScore);
+      player1.winCondition();
+      player1.player1Hold();
 
   });
+    $("button#player2roll").click(function(event) {
+      event.preventDefault();
+      player2.roll = ThrowDice();
+      $("#currentRoll2").text(player2.roll);
+      player2.rollDice();
+      $("#currentScore2").text(player2.tempScore);
+      player2.winCondition();
+      player2.playerTurn2();
+    });
+    $("button#player2hold").click(function(event) {
+      event.preventDefault();
+      player2.hold();
+      $("#totalScore2").text(player2.totalScore);
+      player2.winCondition();
+      player2.player2Hold();
+    });
 
-  $("button#player2roll").click(function(event) {
-    event.preventDefault();
-    player2.roll = ThrowDice();
-    $("#currentRoll2").text(player2.roll);
-    player2.rollDice();
-    $("#currentScore2").text(player2.tempScore);
-    player2.winCondition();
-    player2.playerTurn2();
-  });
-
-  $("button#player2hold").click(function(event) {
-    event.preventDefault();
-    player2.hold();
-    $("#totalScore2").text(player2.totalScore);
-    player2.winCondition();
-    player2.player2Hold();
-
-  });
+  //
+  // $("button#playComputer").click(function(event) {
+  //   event.preventDefault();
+  //   $(".gameText").hide();
+  //   $(".choosePlay").hide();
+  //   $(".vsAi").show();
+  //   $("#computer").show();
+  //   $("button#player1roll").click(function(event) {
+  //     event.preventDefault();
+  //     player1.roll = ThrowDice();
+  //     $("#currentRoll1").text(player1.roll);
+  //     player1.rollDice();
+  //     $("#currentScore1").text(player1.tempScore);
+  //     player1.winCondition();
+  //     player1.playerTurn1();
+  //   });
+  //   $("button#player1hold").click(function(event) {
+  //     event.preventDefault();
+  //     player1.hold();
+  //     $("#totalScore1").text(player1.totalScore);
+  //     player1.winCondition();
+  //     player1.player1Hold();
+  //     });
+  // });
 });
